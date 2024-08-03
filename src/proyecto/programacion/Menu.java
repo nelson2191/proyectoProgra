@@ -4,6 +4,12 @@
  */
 package proyecto.programacion;
 
+import Ventanas.AlimentacionP;
+import Ventanas.AnimalP;
+import Ventanas.EventosP;
+import Ventanas.HabitatsP;
+import Ventanas.MapaP;
+import Ventanas.VisitantesP;
 import java.awt.Color;
 
 /**
@@ -32,21 +38,15 @@ public class Menu extends javax.swing.JFrame {
 
         Background = new javax.swing.JPanel();
         Logo = new javax.swing.JLabel();
-        Mapa = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        Animales = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        Alimentacion = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
         Salir = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        Eventos = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        Habitats = new javax.swing.JPanel();
-        jLabel4 = new javax.swing.JLabel();
-        Visitantes = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
+        Animales = new javax.swing.JButton();
+        Eventos = new javax.swing.JButton();
+        Habitats = new javax.swing.JButton();
+        Alimentacion = new javax.swing.JButton();
+        Visitantes = new javax.swing.JButton();
+        Mapa = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -57,77 +57,7 @@ public class Menu extends javax.swing.JFrame {
 
         Logo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/blanco.png"))); // NOI18N
         Logo.setPreferredSize(new java.awt.Dimension(200, 300));
-        Background.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-200, 10, 460, 220));
-
-        Mapa.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel6.setText("Mapa");
-
-        javax.swing.GroupLayout MapaLayout = new javax.swing.GroupLayout(Mapa);
-        Mapa.setLayout(MapaLayout);
-        MapaLayout.setHorizontalGroup(
-            MapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(MapaLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel6)
-                .addContainerGap(42, Short.MAX_VALUE))
-        );
-        MapaLayout.setVerticalGroup(
-            MapaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, MapaLayout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addComponent(jLabel6)
-                .addContainerGap())
-        );
-
-        Background.add(Mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 190, 100, 30));
-
-        Animales.setBackground(new java.awt.Color(255, 255, 255));
-
-        jLabel1.setText("Animales");
-        jLabel1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        javax.swing.GroupLayout AnimalesLayout = new javax.swing.GroupLayout(Animales);
-        Animales.setLayout(AnimalesLayout);
-        AnimalesLayout.setHorizontalGroup(
-            AnimalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AnimalesLayout.createSequentialGroup()
-                .addGap(17, 17, 17)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(18, Short.MAX_VALUE))
-        );
-        AnimalesLayout.setVerticalGroup(
-            AnimalesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, AnimalesLayout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addContainerGap())
-        );
-
-        Background.add(Animales, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 30, 100, 30));
-
-        Alimentacion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel3.setText("Alimentación");
-
-        javax.swing.GroupLayout AlimentacionLayout = new javax.swing.GroupLayout(Alimentacion);
-        Alimentacion.setLayout(AlimentacionLayout);
-        AlimentacionLayout.setHorizontalGroup(
-            AlimentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlimentacionLayout.createSequentialGroup()
-                .addGap(16, 16, 16)
-                .addComponent(jLabel3)
-                .addContainerGap(15, Short.MAX_VALUE))
-        );
-        AlimentacionLayout.setVerticalGroup(
-            AlimentacionLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(AlimentacionLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel3)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-
-        Background.add(Alimentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 110, 100, 30));
+        Background.add(Logo, new org.netbeans.lib.awtextra.AbsoluteConstraints(-190, 30, 460, 220));
 
         Salir.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         Salir.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -163,74 +93,6 @@ public class Menu extends javax.swing.JFrame {
 
         Background.add(Salir, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 330, 80, 30));
 
-        Eventos.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel2.setText("Eventos");
-
-        javax.swing.GroupLayout EventosLayout = new javax.swing.GroupLayout(Eventos);
-        Eventos.setLayout(EventosLayout);
-        EventosLayout.setHorizontalGroup(
-            EventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventosLayout.createSequentialGroup()
-                .addGap(21, 21, 21)
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 73, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        EventosLayout.setVerticalGroup(
-            EventosLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(EventosLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 24, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-
-        Background.add(Eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 30, 100, 30));
-
-        Habitats.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel4.setText("Habitats");
-
-        javax.swing.GroupLayout HabitatsLayout = new javax.swing.GroupLayout(Habitats);
-        Habitats.setLayout(HabitatsLayout);
-        HabitatsLayout.setHorizontalGroup(
-            HabitatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(HabitatsLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel4)
-                .addContainerGap(28, Short.MAX_VALUE))
-        );
-        HabitatsLayout.setVerticalGroup(
-            HabitatsLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, HabitatsLayout.createSequentialGroup()
-                .addContainerGap(8, Short.MAX_VALUE)
-                .addComponent(jLabel4)
-                .addContainerGap())
-        );
-
-        Background.add(Habitats, new org.netbeans.lib.awtextra.AbsoluteConstraints(440, 110, 100, 30));
-
-        Visitantes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-
-        jLabel5.setText("Visitantes");
-
-        javax.swing.GroupLayout VisitantesLayout = new javax.swing.GroupLayout(Visitantes);
-        Visitantes.setLayout(VisitantesLayout);
-        VisitantesLayout.setHorizontalGroup(
-            VisitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(VisitantesLayout.createSequentialGroup()
-                .addGap(28, 28, 28)
-                .addComponent(jLabel5)
-                .addContainerGap(22, Short.MAX_VALUE))
-        );
-        VisitantesLayout.setVerticalGroup(
-            VisitantesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(VisitantesLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel5)
-                .addContainerGap(8, Short.MAX_VALUE))
-        );
-
-        Background.add(Visitantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 190, 100, 30));
-
         header.addMouseMotionListener(new java.awt.event.MouseMotionAdapter() {
             public void mouseDragged(java.awt.event.MouseEvent evt) {
                 headerMouseDragged(evt);
@@ -254,6 +116,54 @@ public class Menu extends javax.swing.JFrame {
         );
 
         Background.add(header, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 570, 20));
+
+        Animales.setText("Animales");
+        Animales.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AnimalesActionPerformed(evt);
+            }
+        });
+        Background.add(Animales, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 30, -1, -1));
+
+        Eventos.setText("Eventos");
+        Eventos.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EventosActionPerformed(evt);
+            }
+        });
+        Background.add(Eventos, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 80, -1, -1));
+
+        Habitats.setText("Habitats");
+        Habitats.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                HabitatsActionPerformed(evt);
+            }
+        });
+        Background.add(Habitats, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 80, -1, -1));
+
+        Alimentacion.setText("Alimentacion");
+        Alimentacion.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AlimentacionActionPerformed(evt);
+            }
+        });
+        Background.add(Alimentacion, new org.netbeans.lib.awtextra.AbsoluteConstraints(290, 130, -1, -1));
+
+        Visitantes.setText("Visitantes");
+        Visitantes.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                VisitantesActionPerformed(evt);
+            }
+        });
+        Background.add(Visitantes, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 30, -1, -1));
+
+        Mapa.setText("Mapa");
+        Mapa.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                MapaActionPerformed(evt);
+            }
+        });
+        Background.add(Mapa, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 130, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -293,6 +203,36 @@ public class Menu extends javax.swing.JFrame {
         Salir.setBackground(Color.white);
     }//GEN-LAST:event_SalirMouseExited
 
+    private void AnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnimalesActionPerformed
+       AnimalP a=new AnimalP(this,true);
+       a.setVisible(true);
+    }//GEN-LAST:event_AnimalesActionPerformed
+
+    private void EventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventosActionPerformed
+        EventosP e=new EventosP(this,true);
+        e.setVisible(true);
+    }//GEN-LAST:event_EventosActionPerformed
+
+    private void HabitatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HabitatsActionPerformed
+        HabitatsP h=new HabitatsP(this,true);
+        h.setVisible(true);
+    }//GEN-LAST:event_HabitatsActionPerformed
+
+    private void AlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentacionActionPerformed
+        AlimentacionP al=new AlimentacionP(this,true);
+        al.setVisible(true);
+    }//GEN-LAST:event_AlimentacionActionPerformed
+
+    private void VisitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisitantesActionPerformed
+             VisitantesP v=new VisitantesP(this,true);
+             v.setVisible(true);
+    }//GEN-LAST:event_VisitantesActionPerformed
+
+    private void MapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapaActionPerformed
+        MapaP m=new MapaP(this,true);
+        m.setVisible(true);
+    }//GEN-LAST:event_MapaActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -329,22 +269,16 @@ public class Menu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel Alimentacion;
-    private javax.swing.JPanel Animales;
+    private javax.swing.JButton Alimentacion;
+    private javax.swing.JButton Animales;
     private javax.swing.JPanel Background;
-    private javax.swing.JPanel Eventos;
-    private javax.swing.JPanel Habitats;
+    private javax.swing.JButton Eventos;
+    private javax.swing.JButton Habitats;
     private javax.swing.JLabel Logo;
-    private javax.swing.JPanel Mapa;
+    private javax.swing.JButton Mapa;
     private javax.swing.JPanel Salir;
-    private javax.swing.JPanel Visitantes;
+    private javax.swing.JButton Visitantes;
     private javax.swing.JPanel header;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     // End of variables declaration//GEN-END:variables
 }

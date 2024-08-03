@@ -17,7 +17,8 @@ public class AlimentacionP extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         this.setTitle("Registro de Alimentación");
-        this.setSize(720,570);
+        this.setSize(720,570); 
+        //gjjjffy
     }
 
     /**

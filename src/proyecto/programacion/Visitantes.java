@@ -4,7 +4,6 @@
  */
 package proyecto.programacion;
 
-import java.util.Date;
 
 /**
  *
@@ -13,9 +12,12 @@ import java.util.Date;
 public class Visitantes {
     public String nombre;
     public int edad;
-    public Date fechaIngreso;
+    public String fechaIngreso;
 
-    public Visitantes(String nombre, int edad, Date fechaIngreso) {
+    public Visitantes() {
+    }
+    
+    public Visitantes(String nombre, int edad, String fechaIngreso) {
         this.nombre = nombre;
         this.edad = edad;
         this.fechaIngreso = fechaIngreso;
@@ -37,11 +39,11 @@ public class Visitantes {
         this.edad = edad;
     }
 
-    public Date getFechaIngreso() {
+    public String getFechaIngreso() {
         return fechaIngreso;
     }
 
-    public void setFechaIngreso(Date fechaIngreso) {
+    public void setFechaIngreso(String fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
   

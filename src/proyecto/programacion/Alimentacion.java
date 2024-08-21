@@ -12,11 +12,27 @@ public class Alimentacion {
     public int horario;
     public String tipoAlimentacion;
     public int frecuenciaAlimentacion;
-
-    public Alimentacion(int horario, String tipoAlimentacion, int frecuenciaAlimentacion) {
+    public Animales animal;
+    
+    public Alimentacion(){
+        this.horario=0;
+        this.tipoAlimentacion="";
+        this.frecuenciaAlimentacion=0;
+    } 
+    public Alimentacion(int horario, String tipoAlimentacion, int frecuenciaAlimentacion, String animal ) {
+        
         this.horario = horario;
         this.tipoAlimentacion = tipoAlimentacion;
         this.frecuenciaAlimentacion = frecuenciaAlimentacion;
+        this.animal = new Animales();
+    }
+   
+    public void setAnimal(Animales animal) {
+        this.animal = animal;
+    }
+    
+    public Animales getAnimal() {
+        return animal;
     }
 
     public int getHorario() {
@@ -43,6 +59,6 @@ public class Alimentacion {
         this.frecuenciaAlimentacion = frecuenciaAlimentacion;
     }
 
-
+    
     
 }

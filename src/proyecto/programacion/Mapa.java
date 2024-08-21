@@ -4,10 +4,25 @@
  */
 package proyecto.programacion;
 
-/**
- *
- * @author WChavarria
- */
 public class Mapa {
     
+    public Habitats habitats;
+
+    public Mapa(Habitats habitats) {
+        this.habitats = habitats;
+    }
+
+    public Mapa() {
+    }
+
+    public Habitats getHabitats() {
+        return habitats;
+    }
+
+    public void setHabitats(Habitats habitats) {
+        this.habitats = habitats;
+    }
+    
+    
+  
 }

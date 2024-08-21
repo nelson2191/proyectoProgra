@@ -33,27 +33,18 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <Component id="DescripcionEventoField" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <Component id="NombreEventoField" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="FechaEventoField" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace pref="62" max="32767" attributes="0"/>
-                      <Component id="AgregarEventoBt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="45" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Component id="IdEventoField" min="-2" pref="125" max="-2" attributes="0"/>
-                      <EmptySpace max="32767" attributes="0"/>
-                      <Component id="EliminarEventoBt" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="46" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="NombreEventoField" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                  <Component id="FechaEventoField" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                  <Component id="IdEventoField" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
+                  <Component id="DescripcionEventoField" alignment="0" min="-2" pref="125" max="-2" attributes="0"/>
               </Group>
+              <EmptySpace pref="63" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="AgregarEventoBt" min="-2" max="-2" attributes="0"/>
+                  <Component id="EliminarEventoBt" min="-2" max="-2" attributes="0"/>
+                  <Component id="EditarEventoBt" min="-2" max="-2" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="1" attributes="0">
               <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
@@ -64,37 +55,40 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="NombreEvento" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="NombreEventoField" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="separate" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="FechaEvento" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="FechaEventoField" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
-                  <Component id="AgregarEventoBt" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="NombreEvento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="NombreEventoField" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="FechaEvento" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="FechaEventoField" alignment="3" min="-2" pref="22" max="-2" attributes="0"/>
+                      </Group>
                       <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
                           <Component id="IdEvento" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="IdEventoField" alignment="3" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="DescripcionEventoField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="DescripcionEvento" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace pref="37" max="32767" attributes="0"/>
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="29" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
+                      <Component id="AgregarEventoBt" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Component id="EliminarEventoBt" min="-2" max="-2" attributes="0"/>
+                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                      <Component id="EditarEventoBt" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="DescripcionEventoField" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="DescripcionEvento" alignment="3" min="-2" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace pref="31" max="32767" attributes="0"/>
               <Component id="jScrollPane1" min="-2" pref="154" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -120,6 +114,9 @@
               </Table>
             </Property>
           </Properties>
+          <Events>
+            <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="EventosTbMouseClicked"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>
@@ -167,6 +164,9 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Eliminar"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EliminarEventoBtActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="NombreEventoField">
       <Events>
@@ -181,6 +181,14 @@
       </Events>
     </Component>
     <Component class="javax.swing.JTextField" name="IdEventoField">
+    </Component>
+    <Component class="javax.swing.JButton" name="EditarEventoBt">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Editar"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="EditarEventoBtActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>

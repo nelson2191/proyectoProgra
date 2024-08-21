@@ -4,18 +4,28 @@
  */
 package Ventanas;
 
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
+import proyecto.programacion.Animales;
 
 public class AnimalP extends javax.swing.JDialog {
 
-    DefaultTableModel modelo=new DefaultTableModel();
-    
+    DefaultTableModel modeloAnimales = new DefaultTableModel();
+    Animales[] ArrayAnimales = new Animales[10];
+
     public AnimalP(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
         this.setTitle("Registro de Animales");
-        this.setSize(720,570);
+        this.setSize(570, 400);
+        modeloAnimales.addColumn("Nombre");
+        modeloAnimales.addColumn("Especie");
+        modeloAnimales.addColumn("Edad");
+        modeloAnimales.addColumn("Sexo");
+        
+        AnimalTb.setModel(modeloAnimales);
+       
     }
 
     /**
@@ -27,20 +37,22 @@ public class AnimalP extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jButton1 = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         AnimalTb = new javax.swing.JTable();
         NombreAnimal = new javax.swing.JLabel();
         EspecieAnimal = new javax.swing.JLabel();
         EdadAnimal = new javax.swing.JLabel();
-        HabitatAnimal = new javax.swing.JLabel();
         SexoAnimal = new javax.swing.JLabel();
         NombreAnimalField = new javax.swing.JTextField();
         EspecieAnimalField = new javax.swing.JTextField();
         EdadAnimalField = new javax.swing.JTextField();
-        HabitatAnimalCb = new javax.swing.JComboBox<>();
         SexoAnimalCb = new javax.swing.JComboBox<>();
         AgregarAnimalBt = new javax.swing.JButton();
         EliminarAnimalBt = new javax.swing.JButton();
+        EditarAnimalBt = new javax.swing.JButton();
+
+        jButton1.setText("jButton1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -55,6 +67,11 @@ public class AnimalP extends javax.swing.JDialog {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
+        AnimalTb.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AnimalTbMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(AnimalTb);
 
         NombreAnimal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
@@ -66,13 +83,8 @@ public class AnimalP extends javax.swing.JDialog {
         EdadAnimal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         EdadAnimal.setText("Edad");
 
-        HabitatAnimal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        HabitatAnimal.setText("Habitat");
-
         SexoAnimal.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
         SexoAnimal.setText("Sexo");
-
-        HabitatAnimalCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pradera", "Bosque", "Desierto", "Montana", "Marisma", "Sabana", "Region Polar", "Altiplano", "Quebrada", "Lago", "Pantano", "Rio", "Arrecife de Coral", "Oceano", "Playa" }));
 
         SexoAnimalCb.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Macho", "Hembra" }));
 
@@ -84,6 +96,18 @@ public class AnimalP extends javax.swing.JDialog {
         });
 
         EliminarAnimalBt.setText("Eliminar");
+        EliminarAnimalBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EliminarAnimalBtActionPerformed(evt);
+            }
+        });
+
+        EditarAnimalBt.setText("Editar");
+        EditarAnimalBt.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                EditarAnimalBtActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -95,57 +119,118 @@ public class AnimalP extends javax.swing.JDialog {
                     .addComponent(NombreAnimal)
                     .addComponent(EspecieAnimal)
                     .addComponent(EdadAnimal)
-                    .addComponent(HabitatAnimal)
                     .addComponent(SexoAnimal))
-                .addGap(33, 33, 33)
+                .addGap(66, 66, 66)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(NombreAnimalField)
                     .addComponent(EspecieAnimalField)
                     .addComponent(EdadAnimalField)
-                    .addComponent(HabitatAnimalCb, 0, 135, Short.MAX_VALUE)
-                    .addComponent(SexoAnimalCb, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 59, Short.MAX_VALUE)
+                    .addComponent(SexoAnimalCb, 0, 135, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(AgregarAnimalBt)
-                    .addComponent(EliminarAnimalBt))
-                .addGap(32, 32, 32))
+                    .addComponent(EliminarAnimalBt)
+                    .addComponent(EditarAnimalBt)
+                    .addComponent(AgregarAnimalBt, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(30, 30, 30))
             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(NombreAnimal)
-                    .addComponent(NombreAnimalField, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(9, 9, 9)
+                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(AgregarAnimalBt))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(NombreAnimal)
+                            .addComponent(NombreAnimalField, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(8, 8, 8)))
+                .addGap(1, 1, 1)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EspecieAnimal)
-                    .addComponent(EspecieAnimalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(AgregarAnimalBt))
+                    .addComponent(EspecieAnimalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(EdadAnimal)
                     .addComponent(EdadAnimalField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(EliminarAnimalBt))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGap(8, 8, 8)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(HabitatAnimal)
-                    .addComponent(HabitatAnimalCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(SexoAnimal)
-                    .addComponent(SexoAnimalCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(SexoAnimalCb, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SexoAnimal, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(3, 3, 3)
+                .addComponent(EditarAnimalBt)
+                .addGap(18, 18, 18)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 142, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(7, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+
     private void AgregarAnimalBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AgregarAnimalBtActionPerformed
-        // TODO add your handling code here:
+
+        Animales animal = new Animales();
+        animal.setNombre(NombreAnimalField.getText());
+        animal.setEspecie(EspecieAnimalField.getText());
+        animal.setEdad(Integer.parseInt(EdadAnimalField.getText()));
+        animal.setSexo(SexoAnimalCb.getSelectedItem().toString());
+
+        for (int x = 0; x < ArrayAnimales.length; x++) {
+            if (ArrayAnimales[x] == null) {
+                ArrayAnimales[x] = animal;
+                break;
+            }
+
+        }
+
+        Object a[] = new Object[4];
+        a[0] = animal.getNombre();
+        a[1] = animal.getEspecie();
+        a[2] = animal.getEdad();
+        a[3] = animal.getSexo();
+        
+        modeloAnimales.addRow(a);
+
+        AnimalTb.repaint();
+        NombreAnimalField.setText("");
+        EspecieAnimalField.setText("");
+        EdadAnimalField.setText("");
+
     }//GEN-LAST:event_AgregarAnimalBtActionPerformed
+
+    private void EliminarAnimalBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarAnimalBtActionPerformed
+        int SelectedRowIndex=AnimalTb.getSelectedRow();
+        modeloAnimales.removeRow(SelectedRowIndex);
+        
+    }//GEN-LAST:event_EliminarAnimalBtActionPerformed
+
+    private void EditarAnimalBtActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EditarAnimalBtActionPerformed
+        int i=AnimalTb.getSelectedRow();
+        if (i >= 0){
+            modeloAnimales.setValueAt(NombreAnimalField.getText(), i, 0);
+            modeloAnimales.setValueAt(EspecieAnimalField.getText(), i, 1);
+            modeloAnimales.setValueAt(EdadAnimalField.getText(), i, 2);
+            modeloAnimales.setValueAt(SexoAnimalCb.getSelectedItem().toString(),i,3);
+        }else{
+            JOptionPane.showMessageDialog(null,"Error");
+        }
+    }//GEN-LAST:event_EditarAnimalBtActionPerformed
+
+    private void AnimalTbMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnimalTbMouseClicked
+        int SelectedRow=AnimalTb.getSelectedRow();
+        NombreAnimalField.setText(modeloAnimales.getValueAt(SelectedRow, 0).toString());
+        EspecieAnimalField.setText(modeloAnimales.getValueAt(SelectedRow, 1).toString());
+        EdadAnimalField.setText(modeloAnimales.getValueAt(SelectedRow, 2).toString());
+        
+        
+    }//GEN-LAST:event_AnimalTbMouseClicked
+
+    public Animales[] getAnimales(){
+        return this.ArrayAnimales;
+    }
 
     /**
      * @param args the command line arguments
@@ -194,15 +279,15 @@ public class AnimalP extends javax.swing.JDialog {
     private javax.swing.JTable AnimalTb;
     private javax.swing.JLabel EdadAnimal;
     private javax.swing.JTextField EdadAnimalField;
+    private javax.swing.JButton EditarAnimalBt;
     private javax.swing.JButton EliminarAnimalBt;
     private javax.swing.JLabel EspecieAnimal;
     private javax.swing.JTextField EspecieAnimalField;
-    private javax.swing.JLabel HabitatAnimal;
-    private javax.swing.JComboBox<String> HabitatAnimalCb;
     private javax.swing.JLabel NombreAnimal;
     private javax.swing.JTextField NombreAnimalField;
     private javax.swing.JLabel SexoAnimal;
     private javax.swing.JComboBox<String> SexoAnimalCb;
+    private javax.swing.JButton jButton1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

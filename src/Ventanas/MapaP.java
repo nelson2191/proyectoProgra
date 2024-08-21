@@ -4,15 +4,17 @@
  */
 package Ventanas;
 
-/**
- *
- * @author Daniel
- */
-public class MapaP extends javax.swing.JDialog {
+import javax.swing.JOptionPane;
 
-    /**
-     * Creates new form MapaP
-     */
+import proyecto.programacion.Habitats;
+
+
+public class MapaP extends javax.swing.JDialog {
+     Habitats[] mapa = new Habitats[7];
+    int [] conteoMapa = new int[mapa.length];
+     
+  
+   
     public MapaP(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -43,6 +45,52 @@ public class MapaP extends javax.swing.JDialog {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    public void leerHabitats(Habitats[] registroHabitats){
+        mapa=registroHabitats.clone();     
+    }
+    
+    
+    public void contarAnimales(){
+        
+        for(int i = 0; i < mapa.length; i++){
+            int contarAnimales=0;
+            if (mapa[i]!=null){
+                for(int j = 0; j < mapa[i].animal.length; j++){
+                    if (mapa[i].animal[j]!=null){
+                         contarAnimales++;
+                    }     
+                }
+            }
+        conteoMapa[i]=contarAnimales;
+        }
+    }
+    
+    public void imprimirMapa(){
+        String mapaImpreso = "";
+        contarAnimales();
+        
+        for(int i = 0; i < mapa.length; i++){ //recorre las filas
+          
+                
+            
+                
+                if (mapa[i]!=null){
+                    
+                    mapaImpreso = mapaImpreso + mapa[i].getHabitat() + "("+conteoMapa[i]+")" + "\t";
+                    
+                }else{
+                    mapaImpreso = mapaImpreso + "[x]" + "\t";
+       
+                }
+            
+             
+        }
+        
+        JOptionPane.showMessageDialog(null,mapaImpreso);
+        
+    }
+
+       
     /**
      * @param args the command line arguments
      */

@@ -12,11 +12,16 @@ import java.util.Date;
  */
 public class Eventos {
     public String nombre;
-    public Date fecha;
-    public int id;
+    public String fecha;
+    public String id;
     public String descripcion;
 
-    public Eventos(String nombre, Date fecha, int id, String descripcion) {
+    public Eventos() {
+    }
+    
+    
+
+    public Eventos(String nombre, String fecha, String id, String descripcion) {
         this.nombre = nombre;
         this.fecha = fecha;
         this.id = id;
@@ -31,19 +36,19 @@ public class Eventos {
         this.nombre = nombre;
     }
 
-    public Date getFecha() {
+    public String getFecha() {
         return fecha;
     }
 
-    public void setFecha(Date fecha) {
+    public void setFecha(String fecha) {
         this.fecha = fecha;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 

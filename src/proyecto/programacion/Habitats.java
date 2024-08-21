@@ -9,38 +9,50 @@ package proyecto.programacion;
  * @author WChavarria
  */
 public class Habitats {
-    public String animal;
-    public String tipoAmbiente;
-    public String capacidad;
+    public Animales[] animal;
+    public String habitat;
+    public int capacidad;
 
-    public Habitats(String animal, String tipoAmbiente, String capacidad) {
-        this.animal = animal;
-        this.tipoAmbiente = tipoAmbiente;
+    public Habitats(String habitat, int capacidad) {
+        this.animal=new Animales[capacidad];
+        this.habitat = habitat;
         this.capacidad = capacidad;
     }
 
-    public String getAnimal() {
+    public Habitats() {
+    }
+    
+    public String getHabitat() {
+        return habitat;
+    }
+    
+     public Animales[] getAnimal() {
         return animal;
     }
-
-    public void setAnimal(String animal) {
+    
+    public void setAnimal(Animales[] animal) {
         this.animal = animal;
     }
-
-    public String getTipoAmbiente() {
-        return tipoAmbiente;
-    }
-
-    public void setTipoAmbiente(String tipoAmbiente) {
-        this.tipoAmbiente = tipoAmbiente;
-    }
-
-    public String getCapacidad() {
+    
+    public int getCapacidad() {
         return capacidad;
     }
 
-    public void setCapacidad(String capacidad) {
+    public void setHabitat(String habitat) {
+        this.habitat = habitat;
+    }
+
+
+    public void setCapacidad(int capacidad) {
         this.capacidad = capacidad;
+    }
+
+    public void addAnimal(Animales agregarAnimal) {
+        for (int i=0; i<this.animal.length;i++){
+            if (this.animal[i]==null){
+                this.animal[i]=agregarAnimal;
+            }
+        }
     }
    
 }

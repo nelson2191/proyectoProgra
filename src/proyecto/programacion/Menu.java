@@ -18,13 +18,25 @@ import java.awt.Color;
  */
 public class Menu extends javax.swing.JFrame {
     int xMouse, yMouse;
-    
+    AnimalP a;
+    EventosP e;
+    HabitatsP h;
+    AlimentacionP al;
+    VisitantesP v;
+    MapaP m;
     
     /**
      * Creates new form Menu
      */
     public Menu() {
         initComponents();
+        a=new AnimalP(this,true);
+        e=new EventosP(this,true);
+        h=new HabitatsP(this,true);
+        al=new AlimentacionP(this,true);
+        v=new VisitantesP(this,true);
+        m=new MapaP(this,true);
+        
     }
 
     /**
@@ -204,33 +216,34 @@ public class Menu extends javax.swing.JFrame {
     }//GEN-LAST:event_SalirMouseExited
 
     private void AnimalesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnimalesActionPerformed
-       AnimalP a=new AnimalP(this,true);
+       
        a.setVisible(true);
     }//GEN-LAST:event_AnimalesActionPerformed
 
     private void EventosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EventosActionPerformed
-        EventosP e=new EventosP(this,true);
+        
         e.setVisible(true);
     }//GEN-LAST:event_EventosActionPerformed
 
     private void HabitatsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HabitatsActionPerformed
-        HabitatsP h=new HabitatsP(this,true);
+        h.leerAnimales(a.getAnimales());
         h.setVisible(true);
     }//GEN-LAST:event_HabitatsActionPerformed
 
     private void AlimentacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlimentacionActionPerformed
-        AlimentacionP al=new AlimentacionP(this,true);
+        al.leerAnimales(a.getAnimales());
         al.setVisible(true);
     }//GEN-LAST:event_AlimentacionActionPerformed
 
     private void VisitantesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VisitantesActionPerformed
-             VisitantesP v=new VisitantesP(this,true);
-             v.setVisible(true);
+             
+        v.setVisible(true);
     }//GEN-LAST:event_VisitantesActionPerformed
 
     private void MapaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapaActionPerformed
-        MapaP m=new MapaP(this,true);
-        m.setVisible(true);
+        m.leerHabitats(h.getHabitats());
+        m.imprimirMapa();
+      
     }//GEN-LAST:event_MapaActionPerformed
 
     /**
